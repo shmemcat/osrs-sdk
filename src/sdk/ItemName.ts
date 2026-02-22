@@ -71,4 +71,10 @@ export enum ItemName {
   BLADE_OF_SAELDOR = "Blade of saeldor",
   AVERNIC_DEFENDER = "Avernic defender",
   ULTOR_RING = "Ultor ring",
+  GUTHIX_MITRE = "Guthix mitre",
+  ANTLER_GUARD = "Antler guard",
+  AMULET_OF_GLORY = "Amulet of glory",
+  HUNTERS_SUNLIGHT_CROSSBOW = "Hunters' sunlight crossbow",
+  MOONLIGHT_ANTLER_BOLTS = "Moonlight antler bolts",
+  ARMADYL_BREW = "Armadyl brew",
 }

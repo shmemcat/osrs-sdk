@@ -1,16 +1,14 @@
 "use strict";
 
-import InventImage from "../../assets/images/equipment/Rune_crossbow.png";
+import InventImage from "../../assets/images/equipment/Hunters_sunlight_crossbow.png";
 import { Unit } from "../../sdk/Unit";
 import { RangedWeapon } from "../../sdk/weapons/RangedWeapon";
 import { AttackBonuses } from "../../sdk/gear/Weapon";
 import { ItemName } from "../../sdk/ItemName";
 import { AttackStyleTypes, AttackStyle } from "../../sdk/AttackStylesController";
-import { Projectile } from "../../sdk/weapons/Projectile";
-import { Random } from "../../sdk/Random";
 import { Assets } from "../../sdk/utils/Assets";
 
-export class RuneCrossbow extends RangedWeapon {
+export class HuntersSunlightCrossbow extends RangedWeapon {
   Model = Assets.getAssetUrl("models/player_toxic_blowpipe.glb");
   override get model() {
     return this.Model;
@@ -24,7 +22,7 @@ export class RuneCrossbow extends RangedWeapon {
         slash: 0,
         crush: 0,
         magic: 0,
-        range: 90,
+        range: 79,
       },
       defence: {
         stab: 0,
@@ -35,7 +33,7 @@ export class RuneCrossbow extends RangedWeapon {
       },
       other: {
         meleeStrength: 0,
-        rangedStrength: 20,
+        rangedStrength: 0,
         magicDamage: 0,
         prayer: 0,
       },
@@ -47,7 +45,7 @@ export class RuneCrossbow extends RangedWeapon {
   }
 
   compatibleAmmo(): ItemName[] {
-    return [ItemName.RUBY_BOLTS_E, ItemName.DIAMOND_BOLTS_E];
+    return [ItemName.MOONLIGHT_ANTLER_BOLTS];
   }
 
   attackStyles() {
@@ -67,7 +65,7 @@ export class RuneCrossbow extends RangedWeapon {
   }
 
   get itemName(): ItemName {
-    return ItemName.RUNE_CROSSBOW;
+    return ItemName.HUNTERS_SUNLIGHT_CROSSBOW;
   }
 
   get isTwoHander(): boolean {
@@ -76,16 +74,16 @@ export class RuneCrossbow extends RangedWeapon {
 
   get attackRange() {
     if (this.attackStyle() === AttackStyle.LONGRANGE) {
-      return 9;
+      return 10;
     }
-    return 7;
+    return 8;
   }
 
   get attackSpeed() {
-    if (this.attackStyle() === AttackStyle.LONGRANGE) {
-      return 6;
+    if (this.attackStyle() === AttackStyle.RAPID) {
+      return 3;
     }
-    return 5;
+    return 4;
   }
 
   get inventoryImage() {
@@ -93,25 +91,7 @@ export class RuneCrossbow extends RangedWeapon {
   }
 
   rollDamage(from: Unit, to: Unit, bonuses: AttackBonuses) {
-    if (
-      from.equipment.ammo &&
-      from.equipment.ammo.itemName === ItemName.RUBY_BOLTS_E &&
-      Random.get() < 0.066 &&
-      from.currentStats.hitpoint - Math.floor(from.currentStats.hitpoint * 0.1) > 0
-    ) {
-      this.damage = to.currentStats.hitpoint * 0.2;
-      from.addProjectile(
-        new Projectile(this, Math.floor(from.currentStats.hitpoint * 0.1), from, from, "rubyboltspec", {
-          reduceDelay: 15,
-        }),
-      );
-    } else if (
-      from.equipment.ammo &&
-      from.equipment.ammo.itemName === ItemName.DIAMOND_BOLTS_E &&
-      Random.get() < 0.11
-    ) {
-      this.damage = this._calculateHitDamage(from, to, bonuses);
-    } else if (from.equipment.ammo) {
+    if (from.equipment.ammo) {
       super.rollDamage(from, to, bonuses);
     } else {
       this.damage = -1;

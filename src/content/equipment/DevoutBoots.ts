@@ -1,5 +1,6 @@
 import { Feet } from "../../sdk/gear/Feet";
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
+import { Assets } from "../../sdk/utils/Assets";
 import InventImage from "../../assets/images/equipment/Devout_boots.png";
 import { ItemName } from "../../sdk/ItemName";
 
@@ -14,6 +15,11 @@ export class DevoutBoots extends Feet {
   }
   get weight(): number {
     return 0.5;
+  }
+
+  Model = Assets.getAssetUrl("models/player_pegasian_boots.glb");
+  override get model() {
+    return this.Model;
   }
 
   constructor() {

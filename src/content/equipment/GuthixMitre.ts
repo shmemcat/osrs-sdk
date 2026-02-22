@@ -1,24 +1,23 @@
+import { Helmet } from "../../sdk/gear/Helmet";
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
 import { Assets } from "../../sdk/utils/Assets";
-import InventImage from "../../assets/images/equipment/Guthix_robe_top.png";
-import { Chest } from "../../sdk/gear/Chest";
+import InventImage from "../../assets/images/equipment/Guthix_mitre.png";
 import { ItemName } from "../../sdk/ItemName";
 
-export class GuthixRobeTop extends Chest {
+export class GuthixMitre extends Helmet {
   inventorySprite: HTMLImageElement = ImageLoader.createImage(this.inventoryImage);
+
+  get itemName(): ItemName {
+    return ItemName.GUTHIX_MITRE;
+  }
+  get weight(): number {
+    return 0.3;
+  }
 
   get inventoryImage() {
     return InventImage;
   }
-  get itemName(): ItemName {
-    return ItemName.GUTHIX_ROBE_TOP;
-  }
-
-  get weight(): number {
-    return 1.8;
-  }
-
-  Model = Assets.getAssetUrl("models/player_ancestral_robe_top.glb");
+  Model = Assets.getAssetUrl("models/player_crystal_helm.glb");
   override get model() {
     return this.Model;
   }
@@ -44,7 +43,7 @@ export class GuthixRobeTop extends Chest {
         meleeStrength: 0,
         rangedStrength: 0,
         magicDamage: 0,
-        prayer: 6,
+        prayer: 5,
       },
       targetSpecific: {
         undead: 0,

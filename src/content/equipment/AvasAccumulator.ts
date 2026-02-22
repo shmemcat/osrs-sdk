@@ -1,4 +1,5 @@
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
+import { Assets } from "../../sdk/utils/Assets";
 import InventImage from "../../assets/images/equipment/Avas_accumulator.png";
 import { Cape } from "../../sdk/gear/Cape";
 import { ItemName } from "../../sdk/ItemName";
@@ -14,6 +15,11 @@ export class AvasAccumulator extends Cape {
   }
   get weight(): number {
     return 4.535;
+  }
+
+  Model = Assets.getAssetUrl("models/player_ava_s_assembler.glb");
+  override get model() {
+    return this.Model;
   }
 
   constructor() {

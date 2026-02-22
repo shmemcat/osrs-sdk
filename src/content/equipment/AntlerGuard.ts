@@ -1,24 +1,23 @@
+import { Offhand } from "../../sdk/gear/Offhand";
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
 import { Assets } from "../../sdk/utils/Assets";
-import InventImage from "../../assets/images/equipment/Guthix_robe_top.png";
-import { Chest } from "../../sdk/gear/Chest";
+import InventImage from "../../assets/images/equipment/Antler_guard.png";
 import { ItemName } from "../../sdk/ItemName";
 
-export class GuthixRobeTop extends Chest {
+export class AntlerGuard extends Offhand {
   inventorySprite: HTMLImageElement = ImageLoader.createImage(this.inventoryImage);
 
   get inventoryImage() {
     return InventImage;
   }
   get itemName(): ItemName {
-    return ItemName.GUTHIX_ROBE_TOP;
+    return ItemName.ANTLER_GUARD;
   }
-
   get weight(): number {
-    return 1.8;
+    return 0.453;
   }
 
-  Model = Assets.getAssetUrl("models/player_ancestral_robe_top.glb");
+  Model = Assets.getAssetUrl("models/player_avernic_defender.glb");
   override get model() {
     return this.Model;
   }
@@ -27,24 +26,24 @@ export class GuthixRobeTop extends Chest {
     super();
     this.bonuses = {
       attack: {
-        stab: 0,
-        slash: 0,
-        crush: 0,
-        magic: 4,
-        range: 0,
+        stab: 15,
+        slash: 15,
+        crush: 15,
+        magic: 9,
+        range: 9,
       },
       defence: {
-        stab: 0,
-        slash: 0,
-        crush: 0,
-        magic: 4,
-        range: 0,
+        stab: -15,
+        slash: -15,
+        crush: -15,
+        magic: -15,
+        range: -15,
       },
       other: {
-        meleeStrength: 0,
-        rangedStrength: 0,
+        meleeStrength: 5,
+        rangedStrength: 2,
         magicDamage: 0,
-        prayer: 6,
+        prayer: 5,
       },
       targetSpecific: {
         undead: 0,

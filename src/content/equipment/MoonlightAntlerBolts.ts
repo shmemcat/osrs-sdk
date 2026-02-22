@@ -1,26 +1,20 @@
+import { Ammo } from "../../sdk/gear/Ammo";
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
-import { Assets } from "../../sdk/utils/Assets";
-import InventImage from "../../assets/images/equipment/Guthix_robe_top.png";
-import { Chest } from "../../sdk/gear/Chest";
+import InventImage from "../../assets/images/equipment/Moonlight_antler_bolts.png";
 import { ItemName } from "../../sdk/ItemName";
 
-export class GuthixRobeTop extends Chest {
+export class MoonlightAntlerBolts extends Ammo {
   inventorySprite: HTMLImageElement = ImageLoader.createImage(this.inventoryImage);
 
   get inventoryImage() {
     return InventImage;
   }
-  get itemName(): ItemName {
-    return ItemName.GUTHIX_ROBE_TOP;
-  }
-
   get weight(): number {
-    return 1.8;
+    return 0;
   }
 
-  Model = Assets.getAssetUrl("models/player_ancestral_robe_top.glb");
-  override get model() {
-    return this.Model;
+  get itemName(): ItemName {
+    return ItemName.MOONLIGHT_ANTLER_BOLTS;
   }
 
   constructor() {
@@ -30,21 +24,21 @@ export class GuthixRobeTop extends Chest {
         stab: 0,
         slash: 0,
         crush: 0,
-        magic: 4,
+        magic: 0,
         range: 0,
       },
       defence: {
         stab: 0,
         slash: 0,
         crush: 0,
-        magic: 4,
+        magic: 0,
         range: 0,
       },
       other: {
         meleeStrength: 0,
-        rangedStrength: 0,
+        rangedStrength: 60,
         magicDamage: 0,
-        prayer: 6,
+        prayer: 0,
       },
       targetSpecific: {
         undead: 0,

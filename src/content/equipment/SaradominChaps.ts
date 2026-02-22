@@ -1,4 +1,5 @@
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
+import { Assets } from "../../sdk/utils/Assets";
 import InventImage from "../../assets/images/equipment/Saradomin_chaps.png";
 import { Legs } from "../../sdk/gear/Legs";
 import { ItemName } from "../../sdk/ItemName";
@@ -15,6 +16,11 @@ export class SaradominChaps extends Legs {
 
   get weight(): number {
     return 5;
+  }
+
+  Model = Assets.getAssetUrl("models/player_ancestral_robe_bottom.glb");
+  override get model() {
+    return this.Model;
   }
 
   constructor() {

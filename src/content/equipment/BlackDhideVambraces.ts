@@ -1,4 +1,5 @@
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
+import { Assets } from "../../sdk/utils/Assets";
 import InventImage from "../../assets/images/equipment/Black_d'hide_vambraces.png";
 import { Gloves } from "../../sdk/gear/Gloves";
 import { ItemName } from "../../sdk/ItemName";
@@ -14,6 +15,11 @@ export class BlackDhideVambraces extends Gloves {
   }
   get weight(): number {
     return 0.283;
+  }
+
+  Model = Assets.getAssetUrl("models/player_barrows_gloves.glb");
+  override get model() {
+    return this.Model;
   }
 
   constructor() {

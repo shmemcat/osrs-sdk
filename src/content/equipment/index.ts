@@ -2,7 +2,9 @@
 // @index('./*.ts', f => `export { ${f.name} } from './${f.name}';`)
 export { AhrimsRobeskirt } from './AhrimsRobeskirt';
 export { AhrimsRobetop } from './AhrimsRobetop';
+export { AmuletOfGlory } from './AmuletOfGlory';
 export { AmuletOfTorture } from './AmuletOfTorture';
+export { AntlerGuard } from './AntlerGuard';
 export { AncestralRobebottom } from './AncestralRobebottom';
 export { AncestralRobetop } from './AncestralRobetop';
 export { ArmadylChainskirt } from './ArmadylChainskirt';
@@ -24,14 +26,17 @@ export { DiamondBoltsE } from './DiamondBoltsE';
 export { DizanasQuiver } from './DizanasQuiver';
 export { DragonArrows } from './DragonArrows';
 export { FerociousGloves } from './FerociousGloves';
+export { GuthixMitre } from './GuthixMitre';
 export { GuthixRobeTop } from './GuthixRobeTop';
 export { HolyBlessing } from './HolyBlessing';
+export { HuntersSunlightCrossbow } from './HuntersSunlightCrossbow';
 export { InfernalCape } from './InfernalCape';
 export { JusticiarChestguard } from './JusticiarChestguard';
 export { JusticiarFaceguard } from './JusticiarFaceguard';
 export { JusticiarLegguards } from './JusticiarLegguards';
 export { MagesBook } from './MagesBook';
 export { MasoriBodyF } from './MasoriBodyF';
+export { MoonlightAntlerBolts } from './MoonlightAntlerBolts';
 export { MasoriChapsF } from './MasoriChapsF';
 export { MasoriMaskF } from './MasoriMaskF';
 export { NecklaceOfAnguish } from './NecklaceOfAnguish';

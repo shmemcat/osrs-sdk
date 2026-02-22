@@ -1,24 +1,23 @@
+import { Necklace } from "../../sdk/gear/Necklace";
 import { ImageLoader } from "../../sdk/utils/ImageLoader";
 import { Assets } from "../../sdk/utils/Assets";
-import InventImage from "../../assets/images/equipment/Guthix_robe_top.png";
-import { Chest } from "../../sdk/gear/Chest";
+import InventImage from "../../assets/images/equipment/Amulet_of_glory.png";
 import { ItemName } from "../../sdk/ItemName";
 
-export class GuthixRobeTop extends Chest {
+export class AmuletOfGlory extends Necklace {
   inventorySprite: HTMLImageElement = ImageLoader.createImage(this.inventoryImage);
 
   get inventoryImage() {
     return InventImage;
   }
   get itemName(): ItemName {
-    return ItemName.GUTHIX_ROBE_TOP;
+    return ItemName.AMULET_OF_GLORY;
   }
-
   get weight(): number {
-    return 1.8;
+    return 0.008;
   }
 
-  Model = Assets.getAssetUrl("models/player_ancestral_robe_top.glb");
+  Model = Assets.getAssetUrl("models/player_amulet_of_torture__or_.glb");
   override get model() {
     return this.Model;
   }
@@ -27,24 +26,24 @@ export class GuthixRobeTop extends Chest {
     super();
     this.bonuses = {
       attack: {
-        stab: 0,
-        slash: 0,
-        crush: 0,
-        magic: 4,
-        range: 0,
+        stab: 10,
+        slash: 10,
+        crush: 10,
+        magic: 10,
+        range: 10,
       },
       defence: {
-        stab: 0,
-        slash: 0,
-        crush: 0,
-        magic: 4,
-        range: 0,
+        stab: 3,
+        slash: 3,
+        crush: 3,
+        magic: 3,
+        range: 3,
       },
       other: {
-        meleeStrength: 0,
+        meleeStrength: 6,
         rangedStrength: 0,
         magicDamage: 0,
-        prayer: 6,
+        prayer: 3,
       },
       targetSpecific: {
         undead: 0,
