@@ -65,8 +65,8 @@ export class RangedWeapon extends Weapon {
         prayerMultiplier = 1.05;
       } else if (rangePrayer.name === "Hawk Eye") {
         prayerMultiplier = 1.1;
-      } else if (rangePrayer.name === "Eagle Eye") {
-        prayerMultiplier = 1.15;
+      } else if (rangePrayer.name === "Deadeye") {
+        prayerMultiplier = 1.18;
       } else if (rangePrayer.name === "Rigour") {
         prayerMultiplier = 1.2;
       }
@@ -86,8 +86,8 @@ export class RangedWeapon extends Weapon {
         prayerMultiplier = 1.05;
       } else if (rangePrayer.name === "Hawk Eye") {
         prayerMultiplier = 1.1;
-      } else if (rangePrayer.name === "Eagle Eye") {
-        prayerMultiplier = 1.15;
+      } else if (rangePrayer.name === "Deadeye") {
+        prayerMultiplier = 1.18;
       } else if (rangePrayer.name === "Rigour") {
         prayerMultiplier = 1.23;
       }
@@ -132,6 +132,8 @@ export class RangedWeapon extends Weapon {
         prayerMultiplier = 1.2;
       } else if (defencePrayer.name === "Piety") {
         prayerMultiplier = 1.25;
+      } else if (defencePrayer.name === "Deadeye") {
+        prayerMultiplier = 1.05;
       } else if (defencePrayer.name === "Rigour") {
         prayerMultiplier = 1.25;
       } else if (defencePrayer.name === "Augury") {

@@ -5,18 +5,18 @@ import { Settings } from "../../sdk/Settings";
 
 export class EagleEye extends BasePrayer {
   get name() {
-    return "Eagle Eye";
+    return "Deadeye";
   }
 
   get groups() {
-    return [PrayerGroups.ACCURACY, PrayerGroups.STRENGTH];
+    return [PrayerGroups.ACCURACY, PrayerGroups.STRENGTH, PrayerGroups.DEFENCE];
   }
   levelRequirement(): number {
-    return 44;
+    return 62;
   }
 
   drainRate(): number {
-    return 12;
+    return 20;
   }
 
   isOverhead() {

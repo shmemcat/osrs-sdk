@@ -9,7 +9,7 @@ import { AttackStyleTypes, AttackStyle } from "../../sdk/AttackStylesController"
 import { Assets } from "../../sdk/utils/Assets";
 
 export class HuntersSunlightCrossbow extends RangedWeapon {
-  Model = Assets.getAssetUrl("models/player_toxic_blowpipe.glb");
+  Model = Assets.getAssetUrl("models/player_bow_of_faerdhinen.glb");
   override get model() {
     return this.Model;
   }

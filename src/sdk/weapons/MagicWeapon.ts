@@ -109,6 +109,8 @@ export class MagicWeapon extends Weapon {
         prayerMultiplier = 1.2;
       } else if (defencePrayer.name === "Piety") {
         prayerMultiplier = 1.25;
+      } else if (defencePrayer.name === "Deadeye") {
+        prayerMultiplier = 1.05;
       } else if (defencePrayer.name === "Rigour") {
         prayerMultiplier = 1.25;
       } else if (defencePrayer.name === "Augury") {
