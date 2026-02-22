@@ -93,8 +93,11 @@ export class RuneCrossbow extends RangedWeapon {
   }
 
   rollDamage(from: Unit, to: Unit, bonuses: AttackBonuses) {
+    if (!from.equipment.ammo || !this.compatibleAmmo().includes(from.equipment.ammo.itemName)) {
+      this.damage = -1;
+      return;
+    }
     if (
-      from.equipment.ammo &&
       from.equipment.ammo.itemName === ItemName.RUBY_BOLTS_E &&
       Random.get() < 0.066 &&
       from.currentStats.hitpoint - Math.floor(from.currentStats.hitpoint * 0.1) > 0
@@ -106,15 +109,12 @@ export class RuneCrossbow extends RangedWeapon {
         }),
       );
     } else if (
-      from.equipment.ammo &&
       from.equipment.ammo.itemName === ItemName.DIAMOND_BOLTS_E &&
       Random.get() < 0.11
     ) {
       this.damage = this._calculateHitDamage(from, to, bonuses);
-    } else if (from.equipment.ammo) {
-      super.rollDamage(from, to, bonuses);
     } else {
-      this.damage = -1;
+      super.rollDamage(from, to, bonuses);
     }
   }
 }

@@ -91,7 +91,7 @@ export class HuntersSunlightCrossbow extends RangedWeapon {
   }
 
   rollDamage(from: Unit, to: Unit, bonuses: AttackBonuses) {
-    if (from.equipment.ammo) {
+    if (from.equipment.ammo && this.compatibleAmmo().includes(from.equipment.ammo.itemName)) {
       super.rollDamage(from, to, bonuses);
     } else {
       this.damage = -1;

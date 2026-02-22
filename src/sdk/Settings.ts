@@ -127,8 +127,8 @@ export class Settings {
 
     Settings.zoomScale = parseFloat(window.localStorage.getItem("zoomScale")) || 1;
 
-    Settings.playsAudio = window.localStorage.getItem("playsAudio") === "true" || false;
-    Settings.playsAreaAudio = window.localStorage.getItem("playsAreaAudio") === "true" || false;
+    Settings.playsAudio = window.localStorage.getItem("playsAudio") !== "false";
+    Settings.playsAreaAudio = window.localStorage.getItem("playsAreaAudio") !== "false";
 
     if (Settings.mobileCheck()) {
       Settings.playsAudio = false;
@@ -147,14 +147,14 @@ export class Settings {
     Settings.displayMobLoS = window.localStorage.getItem("displayMobLoS") === "true" || false;
     Settings.lockPOV = false; //window.localStorage.getItem('lockPOV') !== 'false' || false;
     Settings.displayFeedback = !(window.localStorage.getItem("displayFeedback") === "false" || false);
-    Settings.metronome = window.localStorage.getItem("metronome") === "true" || false;
+    Settings.metronome = window.localStorage.getItem("metronome") === "true";
 
     Settings.displayXpDrops = !(window.localStorage.getItem("displayXpDrops") === "false" || false);
 
-    Settings.inventory_key = window.localStorage.getItem("inventory_key") || "F4";
-    Settings.spellbook_key = window.localStorage.getItem("spellbook_key") || "F2";
-    Settings.equipment_key = window.localStorage.getItem("equipment_key") || "F1";
-    Settings.prayer_key = window.localStorage.getItem("prayer_key") || "F3";
+    Settings.inventory_key = window.localStorage.getItem("inventory_key") || "1";
+    Settings.spellbook_key = window.localStorage.getItem("spellbook_key") || "4";
+    Settings.equipment_key = window.localStorage.getItem("equipment_key") || "2";
+    Settings.prayer_key = window.localStorage.getItem("prayer_key") || "F1";
     Settings.combat_key = window.localStorage.getItem("combat_key") || "F5";
     Settings.player_stats = DeserializePlayerStats(window.localStorage.getItem("stats"));
     Settings.tile_markers = JSON.parse(window.localStorage.getItem("tile_markers"));
