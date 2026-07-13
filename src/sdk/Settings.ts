@@ -153,8 +153,8 @@ export class Settings {
 
     Settings.inventory_key = window.localStorage.getItem("inventory_key") || "1";
     Settings.spellbook_key = window.localStorage.getItem("spellbook_key") || "4";
-    Settings.equipment_key = window.localStorage.getItem("equipment_key") || "2";
-    Settings.prayer_key = window.localStorage.getItem("prayer_key") || "F1";
+    Settings.equipment_key = window.localStorage.getItem("equipment_key") || "F1";
+    Settings.prayer_key = window.localStorage.getItem("prayer_key") || "2";
     Settings.combat_key = window.localStorage.getItem("combat_key") || "F5";
     Settings.player_stats = DeserializePlayerStats(window.localStorage.getItem("stats"));
     Settings.tile_markers = JSON.parse(window.localStorage.getItem("tile_markers"));

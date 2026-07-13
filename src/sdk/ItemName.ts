@@ -77,4 +77,6 @@ export enum ItemName {
   HUNTERS_SUNLIGHT_CROSSBOW = "Hunters' sunlight crossbow",
   MOONLIGHT_ANTLER_BOLTS = "Moonlight antler bolts",
   ARMADYL_BREW = "Armadyl brew",
+  DEBUG_SKIP_TO_JAD = "Debug: Skip to Jad",
+  DEBUG_SKIP_TO_HEALERS = "Debug: Skip to Healers",
 }

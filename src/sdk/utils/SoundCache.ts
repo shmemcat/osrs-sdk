@@ -14,6 +14,23 @@ export class SoundCache {
 
   static context = window.AudioContext ? new AudioContext() : null;
   static cachedSounds: { [src: string]: AudioBuffer } = {};
+  private static _resumeListenerAdded = false;
+
+  static ensureContextResumed() {
+    if (SoundCache.context && SoundCache.context.state === "suspended") {
+      SoundCache.context.resume();
+    }
+    if (!SoundCache._resumeListenerAdded) {
+      SoundCache._resumeListenerAdded = true;
+      const resume = () => {
+        if (SoundCache.context && SoundCache.context.state === "suspended") {
+          SoundCache.context.resume();
+        }
+      };
+      document.addEventListener("click", resume, { once: false });
+      document.addEventListener("keydown", resume, { once: false });
+    }
+  }
 
   static getCachedSound(src: string): HTMLAudioElement {
     if (!src) {
@@ -46,6 +63,7 @@ export class SoundCache {
     if (!SoundCache.context) {
       return null;
     }
+    SoundCache.ensureContextResumed();
     if (this.cachedSounds[src] === undefined) {
       (async () => {
         const sound = await this.preload(src);
