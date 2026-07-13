@@ -108,7 +108,7 @@ export class RuneCrossbow extends RangedWeapon {
           reduceDelay: 15,
         }),
       );
-    } else if (from.equipment.ammo.itemName === ItemName.DIAMOND_BOLTS_E && Random.get() < 0.11) {
+    } else if (from.equipment.ammo.itemName === ItemName.DIAMOND_BOLTS_E && Random.get() < 0.1) {
       this.damage = this._calculateHitDamage(from, to, bonuses);
     } else {
       super.rollDamage(from, to, bonuses);
