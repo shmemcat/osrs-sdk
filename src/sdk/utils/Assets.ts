@@ -9,18 +9,18 @@ export class Assets {
   /**
    * Base URL for CDN-hosted assets (models, sounds, etc).
    *
-   * The production CDN (oldschool-cdn.com) only allows production origins via
-   * CORS, so fetching it directly from a local dev server hangs on a CORS
-   * rejection. When running on localhost we instead use a relative "/cdn" path
-   * that the webpack dev server proxies to the CDN server-side (see the
-   * `devServer.proxy` config in InfernoTrainer), which is not subject to the
-   * browser's CORS check. In production we hit the CDN directly.
+   * The production CDN (oldschool-cdn.com) restricts CORS to production origins,
+   * so fetching it directly from localhost is blocked by the browser and the
+   * loading screen hangs. For local development we instead use the legacy
+   * Netlify bucket, which serves the same assets with `Access-Control-Allow-Origin: *`
+   * and therefore works from any origin (including a static `npx serve` build) with
+   * no proxy or dev server required. Production continues to use the canonical CDN.
    */
   static getCdnBaseUrl() {
     if (typeof window !== "undefined") {
       const host = window.location.hostname;
       if (host === "localhost" || host === "127.0.0.1" || host === "0.0.0.0") {
-        return "/cdn";
+        return "https://assets-soltrainer.netlify.app";
       }
     }
     return "https://oldschool-cdn.com";
